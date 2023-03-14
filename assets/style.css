@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+header h1{
+    flex:1;
+    text-align: center;
+    background-color: aqua;
+    color: blue;
+}
+header p {
+    margin: 15px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aqua;
+}
+
+section{
+   background-color: brown;
+   margin: 10px;
+}
+
+
+button{
+    background-color: darkgreen;
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+    form{
+        margin: auto;
+        padding: 10px;
+
+    }
+
+
+.Starter-page{
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+
+.Questions{
+    text-align: center;
+    padding:10px;
+}
+
+.Questions form ul li {
+    list-style-type: none;
+}
+
+.final-page{
+    text-align: center;
+    padding:10px
+}
+
+.highscore-page{
+    text-align: center;
+    padding: 10PX;
+}
