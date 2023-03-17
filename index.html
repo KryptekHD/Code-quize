@@ -8,55 +8,31 @@
     <title>Coding Quiz</title>
 </head>
 <body>
-<header>
-    <p class="High-Score">View Highscore</p>
-    <h1>CODING QUIZE!</h1>
-    <p id="timer">Time:<p>
-    </header>
-    <main>
-    <section class="Starter-page">
-        <h2>Coding Quize Challenge</h2>
-        <p>Welcome to the coding quize would you like to start?</p>
+    <div class="top">
+        <button class="High-score">Check Highscore</button>
+        <div class="timer">Time:</div>
+    </div> 
+    <div class="text-box">
+        <div class="questions">
+            <h3 class="prompt"> </h3>
+            <p class = "intro"></p>
+            <section class="opt-btn">
+                <button class="choice1">1.</button>
+                <button class="choice2">2.</button>
+                <button class="choice3">3.</button>
+                <button class="choice4">4.</button>
+            </section>
+            <p class="answer"> answer</p>
+        </div>
+    </div> 
+    <div class="begin">
         <button class="start">START</button>
-
-    </section>
+    </div> 
+    <div class="end">
+        <button class="home">Go Back</button>
+        <button class="clear"> Clear Highscores</button>
+    </div> 
     
-    <section class="Questions">
-        <h3> this will be the first prompt</h3>
-        <form>
-            <ul>
-                <li><button class="Choice1">1.</button></li>
-                <li><button class="Choice2">2.</button></li>
-                <li><button class="Choice3">3.</button></li>
-                <li><button class="Choice4">4.</button></li>
-            </ul>    
-        </form>
-    </section>
-
-    <section class="final-page">
-        <h3>ALL DONE!</h3>
-        <p>Your Final Score</p>
-        <form>
-            <label class="intials">Enter initials</label>
-            <input type="text" id="initials" name="initials">
-            <input type="submit" value="Submit">
-        </form>
-    </section>
-
-    <section class="highscore-page">
-        <h3>HighScores</h3>
-        <p></p>
-        <form>
-            <button class="home">Go Back</button>
-            <button class="clear"> Clear Highscores</button>
-        </form>
-    </section>    
-
-    <section>
-        <h4></h4>
-    </section>
-</main>
-
-    <script src="./assets/script.js"></script>
+<script src="./assets/script.js"></script>
 </body>
 </html>
