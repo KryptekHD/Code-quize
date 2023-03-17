@@ -9,6 +9,7 @@ let btnTwo = document.querySelector(".choice2");
 let btnThree = document.querySelector(".choice3")
 let btnFour = document.querySelector(".choice4")
 let answer = document.querySelector(".answer")
+let form = document.querySelector(".for")
 
 let heading = document.querySelector(".prompt");
 let intro = document.querySelector(".intro");
@@ -34,6 +35,7 @@ function startUpPage() {
     intro.textContent = "Try to answer the following code-related questions with in the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds";
     btn.setAttribute("class","hide");
     end.setAttribute("class","hide");
+    answer.setAttribute("class","hide")
 }
 
 function startButton(){
@@ -42,7 +44,7 @@ function startButton(){
         let timerInterval = setInterval(function() {
             seconds--;
             time.textContent = "Timer: " + seconds ;
-            if(seconds === 0) {
+            if(seconds < 0) {
                 clearInterval(timerInterval);
               }
               
@@ -53,6 +55,17 @@ function startButton(){
     // prestent the question function that itterates through the questions
     
 }
+let int = document.getElementById("#initials");
+function finalForm(){
+    heading.textContent=" Congradulation";
+    form.setAttribute("class","")
+    btn.setAttribute("class","hide")
+    end.setAttribute("class","");
+
+    
+    localStorage.setItem("int", JSON.stringify(int+ seconds));
+
+}
 
 
 
@@ -60,6 +73,7 @@ function questionOne(){
     heading.textContent = "Commonly used date types DO NOT include:";
     intro.setAttribute("class","hide")
     btn.setAttribute("class","")
+    answer.setAttribute("class","")
     btnOne.textContent = " 1: strings";
     btnTwo.textContent = " 2: booleans";
     btnThree.textContent = "3: alerts";
@@ -68,6 +82,7 @@ function questionOne(){
     btn.addEventListener("click",function(event){
         if(event.target === btnThree){
             answer.setAttribute("style", "background-color: green")
+            seconds=seconds;
             return questionTwo()
         }
         else{
@@ -89,10 +104,12 @@ function questionTwo(){
     btn.addEventListener("click",function(event){
         if(event.target === btnFour){
             answer.setAttribute("style", "background-color: green")
+            seconds=seconds;
             return questionThree();
         }
         else{
             answer.setAttribute("style", "background-color: red")
+            seconds=seconds;
             seconds = seconds - 10;
             return questionThree();
         }
@@ -109,6 +126,7 @@ function questionThree(){
     btn.addEventListener("click",function(event){
         if(event.target === btnFour){
             answer.setAttribute("style", "background-color: green")
+            seconds=seconds;
             return questionFour()
         }
         else{
@@ -130,13 +148,15 @@ function questionFour(){
     btn.addEventListener("click",function(event){
         if(event.target === btnTwo){
             answer.setAttribute("style", "background-color: green")
-            return
+            seconds=seconds;
+            return finalForm();
         }
         else{
             answer.setAttribute("style", "background-color: red")
             seconds = seconds - 10;
-            return
+            return finalForm();
         }
     });
 
 }
+
